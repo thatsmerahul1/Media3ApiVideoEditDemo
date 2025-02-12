@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".MainActivity2">
+
+      <Button
+          android:id="@+id/selectVideoButton"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Select Videos" />
+
+      <Button
+          android:id="@+id/selectSingleVideoButton"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Select Single Video" />
+
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/videoRecyclerView"
+          android:layout_width="match_parent"
+          android:layout_height="150dp" />
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/mergeButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Merge" />
+
+        <Button
+            android:id="@+id/trimButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Trim" />
+
+        <Button
+            android:id="@+id/rotateButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Rotate" />
+      </LinearLayout>
+
+      <Button
+          android:id="@+id/trimAndRotateButton"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Trim + Rotate" />
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:hint="Trim Start (ms)">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/trimStartEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:hint="Trim End (ms)">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/trimEndEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:hint="Rotation (degrees)">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/rotationEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <ProgressBar
+          android:id="@+id/progressBar"
+          style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="16dp"
+          android:max="100" />
+
+    </LinearLayout>
+  </ScrollView>
+
+  <!-- Loading Overlay -->
+  <FrameLayout
+      android:id="@+id/loadingOverlay"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="#80000000"
+      android:visibility="gone">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+      <ProgressBar
+          android:layout_width="48dp"
+          android:layout_height="48dp"
+          android:layout_gravity="center" />
+
+      <TextView
+          android:id="@+id/progressText"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_marginTop="8dp"
+          android:text="Processing: 0%"
+          android:textColor="@android:color/black" />
+    </LinearLayout>
+  </FrameLayout>
+
+</FrameLayout>
