@@ -1,5 +1,6 @@
 [versions]
 agp = "8.6.1"
+cardview = "1.0.0"
 glide = "4.15.1"
 kotlin = "1.9.0"
 coreKtx = "1.15.0"
@@ -16,6 +17,7 @@ constraintlayout = "2.2.0"
 media3Transformer = "1.5.1"
 
 [libraries]
+androidx-cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-media3-common = { module = "androidx.media3:media3-common", version.ref = "media3Transformer" }
 androidx-media3-exoplayer = { module = "androidx.media3:media3-exoplayer", version.ref = "media3Transformer" }
