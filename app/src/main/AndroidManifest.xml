@@ -27,9 +27,6 @@
         android:theme="@style/Theme.WebViewTest"
         tools:targetApi="31" >
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity2"
             android:exported="true"
             android:label="@string/app_name"
